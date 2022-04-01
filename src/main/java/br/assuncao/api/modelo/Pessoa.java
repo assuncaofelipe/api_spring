@@ -1,21 +1,30 @@
 package br.assuncao.api.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-
-public class Pessoa {
+@Entity
+@Table(name = "pessoas")
+public class Pessoa { 
+    
     
     // atributos
-    private String nome;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int codigo;
     private int idade;
-
+    private String nome;
     
     // GET and SET
-    public String getNome() {
-        return nome;
+    public int getCodigo() {
+        return codigo;
     }
-    
-    public void setNome(String nome) {
-        this.nome = nome;
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public int getIdade() {
@@ -25,4 +34,11 @@ public class Pessoa {
         this.idade = idade;
     }
 
+    public String getNome() {
+        return nome;
+    }
+    
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
