@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Table(name = "pessoas")
 public class Pessoa { 
     
-    
     // atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
